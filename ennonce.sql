@@ -483,15 +483,45 @@ MariaDB [haribo]> SELECT prenom, couleur_des_yeux FROM stagiaire WHERE couleur_d
 4 rows in set (0.001 sec)
 
 --34-- Compter le nombre de stagiaires
-
+MariaDB [haribo]> SELECT COUNT(prenom) AS 'nbr de stagiaires' FROM stagiaire;
++-------------------+
+| nbr de stagiaires |
++-------------------+
+|                14 |
++-------------------+
+1 row in set (0.000 sec)
 
 --35-- Compter le nombre de stagiaires hommes mais en changeant le nom de la colonne de résultat par *nb_stagiaires_H*
+MariaDB [haribo]> SELECT COUNT(prenom) AS 'nbr de stagiaires' FROM stagiaire WHERE genre='h';
++-------------------+
+| nbr de stagiaires |
++-------------------+
+|                11 |
++-------------------+
+1 row in set (0.001 sec)
 
 --36-- Compter le nombre de couleurs d'yeux différentes
+MariaDB [haribo]> SELECT COUNT(*) AS 'nbr couleur yeux' FROM stagiaire GROUP BY couleur_des_yeux;
++------------------+
+| nbr couleur yeux |
++------------------+
+|                1 |
+|               12 |
+|                1 |
++------------------+
+3 rows in set (0.000 sec)
 
 --37-- Afficher le prénom et les yeux du stagiaire qui a l'id le plus petit
+MariaDB [haribo]> SELECT prenom, couleur_des_yeux, MIN(id_stagiaire) FROM stagiaire;
++--------+------------------+-------------------+
+| prenom | couleur_des_yeux | MIN(id_stagiaire) |
++--------+------------------+-------------------+
+| Jordan | marron           |                 1 |
++--------+------------------+-------------------+
+1 row in set (0.000 sec)
 
 --38-- Afficher le prénom et les yeux du stagiaire qui a l'id le plus grand /!\ c'est une requête imbriquée qu'il faut faire (requête sur le résultat d'une autre requête)
+
 
 --39-- Afficher les stagiaires qui ont les yeux bleu et vert
 

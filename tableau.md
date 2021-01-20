@@ -33,7 +33,6 @@ MariaDB [haribo]>  SELECT * FROM bonbon;
 |         9 | tagada     | purple    |
 +-----------+------------+-----------+
 9 rows in set (0.000 sec)
-
 MariaDB [haribo]> SELECT * FROM manger;
 +-----------+--------------+-----------+-------------+----------+
 | id_manger | id_stagiaire | id_bonbon | date_manger | quantite |
@@ -48,3 +47,4 @@ MariaDB [haribo]> SELECT * FROM manger;
 |         8 |            5 |         4 | 2020-06-29  |        4 |
 +-----------+--------------+-----------+-------------+----------+
 8 rows in set (0.001 sec)
+Afficher le prénom et les yeux du stagiaire qui a l'id le plus petit
