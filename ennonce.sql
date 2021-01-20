@@ -521,7 +521,13 @@ MariaDB [haribo]> SELECT prenom, couleur_des_yeux, MIN(id_stagiaire) FROM stagia
 1 row in set (0.000 sec)
 
 --38-- Afficher le prénom et les yeux du stagiaire qui a l'id le plus grand /!\ c'est une requête imbriquée qu'il faut faire (requête sur le résultat d'une autre requête)
-
+MariaDB [haribo]> SELECT prenom, couleur_des_yeux FROM stagiaire WHERE id_stagiaire=(SELECT MAX(id_stagiaire) FROM stagiaire);
++--------+------------------+
+| prenom | couleur_des_yeux |
++--------+------------------+
+| Mila   | marron           |
++--------+------------------+
+1 row in set (0.001 sec)
 
 --39-- Afficher les stagiaires qui ont les yeux bleu et vert
 
